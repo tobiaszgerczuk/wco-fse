@@ -1,0 +1,12 @@
+// Minimal global rules. Colours, fonts and spacing come from theme.json presets.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}

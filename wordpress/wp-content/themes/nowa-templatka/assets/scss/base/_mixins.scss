@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use 'tokens' as *;
+
+// Min-width media query for a named breakpoint: @include respond-up('tablet') { ... }
+@mixin respond-up($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// Max-width media query for a named breakpoint.
+@mixin respond-down($name) {
+  @media (max-width: calc(#{map.get($breakpoints, $name)} - 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include respond-down('mobile') {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include respond-down('tablet') {
+    @content;
+  }
+}

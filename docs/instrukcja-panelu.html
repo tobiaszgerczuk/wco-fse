@@ -1,0 +1,660 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel SD ProTech</title>
+<meta name="description" content="Instrukcja obsługi panelu WordPress strony SD ProTech: strony, szkolenia online, produkty, zamówienia i test ścieżki zakupowej.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --bg: #f6f6f7;
+    --surface: #ffffff;
+    --ink: #1b1c20;
+    --ink-soft: #4d4f57;
+    --muted: #767882;
+    --line: #e2e2e6;
+    --accent: #e52d2d;
+    --accent-ink: #ffffff;
+    --accent-soft: #fdecec;
+    --chip: #ececef;
+    --ok: #1f7a4a;
+    --ok-soft: #e4f3ea;
+    --warn: #8a5a00;
+    --warn-soft: #fbf1dc;
+    --info: #2c5d9e;
+    --info-soft: #e6eef9;
+    --hero: #1b1c20;
+    --hero-ink: #ffffff;
+    --hero-muted: #b7b8c0;
+    --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141518;
+      --surface: #1d1e23;
+      --ink: #ececef;
+      --ink-soft: #c3c4cb;
+      --muted: #9496a0;
+      --line: #2f3037;
+      --accent: #ff5252;
+      --accent-ink: #1b1c20;
+      --accent-soft: #3a1f21;
+      --chip: #2a2b31;
+      --ok: #6fd39c;
+      --ok-soft: #1c3127;
+      --warn: #f0c46a;
+      --warn-soft: #362c17;
+      --info: #8db6ec;
+      --info-soft: #1d2a3d;
+      --hero: #0d0e10;
+      --hero-ink: #ffffff;
+      --hero-muted: #a2a3ab;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #141518;
+    --surface: #1d1e23;
+    --ink: #ececef;
+    --ink-soft: #c3c4cb;
+    --muted: #9496a0;
+    --line: #2f3037;
+    --accent: #ff5252;
+    --accent-ink: #1b1c20;
+    --accent-soft: #3a1f21;
+    --chip: #2a2b31;
+    --ok: #6fd39c;
+    --ok-soft: #1c3127;
+    --warn: #f0c46a;
+    --warn-soft: #362c17;
+    --info: #8db6ec;
+    --info-soft: #1d2a3d;
+    --hero: #0d0e10;
+    --hero-ink: #ffffff;
+    --hero-muted: #a2a3ab;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  /* Hero */
+  .hero { background: var(--hero); color: var(--hero-ink); padding: 56px 20px 48px; }
+  .hero-inner { max-width: 1180px; margin: 0 auto; display: grid; gap: 14px; }
+  .eyebrow { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .hero h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(32px, 5vw, 52px); line-height: 1.08; margin: 0; text-wrap: balance; }
+  .hero p { margin: 0; max-width: 62ch; color: var(--hero-muted); font-size: 18px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--hero-muted); margin-top: 6px; }
+  .hero-meta strong { color: var(--hero-ink); font-weight: 600; }
+
+  /* Layout */
+  .layout { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 56px; align-items: start; }
+  nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); font-size: 15px; }
+  .toc-title { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; counter-reset: toc; }
+  .toc li { counter-increment: toc; }
+  .toc a { display: grid; grid-template-columns: 26px 1fr; padding: 5px 8px; border-radius: 6px; color: var(--ink-soft); text-decoration: none; line-height: 1.35; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-mono); font-size: 11px; color: var(--muted); padding-top: 3px; }
+  .toc a:hover { background: var(--chip); color: var(--ink); }
+  .toc a.is-test { color: var(--accent); font-weight: 600; }
+
+  main { min-width: 0; display: grid; gap: 64px; }
+  section { display: grid; gap: 18px; }
+  section > * { margin: 0; }
+  h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 3vw, 30px); line-height: 1.2; text-wrap: balance; display: flex; gap: 14px; align-items: baseline; }
+  h2 .num { font-family: var(--font-mono); font-size: 14px; font-weight: 500; color: var(--accent); }
+  h3 { font-family: var(--font-display); font-weight: 700; font-size: 19px; line-height: 1.3; margin: 10px 0 0; text-wrap: balance; }
+  p, li { max-width: 70ch; }
+  .lead { font-size: 18px; color: var(--ink-soft); }
+  ul, ol { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+
+  /* Menu path chip: "WooCommerce › Zamówienia" */
+  .path { font-family: var(--font-mono); font-size: 13.5px; background: var(--chip); color: var(--ink); padding: 2px 8px; border-radius: 5px; white-space: nowrap; }
+  .path i { font-style: normal; color: var(--muted); padding: 0 3px; }
+  @media (max-width: 480px) { .path { white-space: normal; } }
+
+  /* Steps */
+  ol.steps { list-style: none; padding: 0; counter-reset: step; gap: 12px; }
+  ol.steps > li { counter-increment: step; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; }
+  ol.steps > li::before { content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 14px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--bg); margin-top: 1px; }
+
+  /* Notes */
+  .note { border-left: 3px solid var(--info); background: var(--info-soft); padding: 14px 18px; border-radius: 0 8px 8px 0; display: grid; gap: 6px; max-width: 76ch; }
+  .note.warn { border-color: var(--warn); background: var(--warn-soft); }
+  .note.stop { border-color: var(--accent); background: var(--accent-soft); }
+  .note-label { font-family: var(--font-display); font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--info); }
+  .note.warn .note-label { color: var(--warn); }
+  .note.stop .note-label { color: var(--accent); }
+  .note p { margin: 0; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 15.5px; }
+  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font-family: var(--font-display); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--bg); }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+
+  .status { display: inline-block; font-size: 13px; font-weight: 600; padding: 2px 9px; border-radius: 4px; white-space: nowrap; }
+  .s-ok { background: var(--ok-soft); color: var(--ok); }
+  .s-wait { background: var(--warn-soft); color: var(--warn); }
+  .s-off { background: var(--accent-soft); color: var(--accent); }
+  .s-neutral { background: var(--chip); color: var(--ink-soft); }
+
+  /* Flow diagram */
+  .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .flow-step { padding: 18px 18px 20px; display: grid; gap: 6px; align-content: start; border-right: 1px solid var(--line); position: relative; }
+  .flow-step:last-child { border-right: 0; }
+  .flow-step .where { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .flow-step strong { font-family: var(--font-display); font-size: 16px; line-height: 1.3; }
+  .flow-step span { font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; }
+  .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 18px; background: var(--surface); color: var(--accent); font-weight: 700; width: 18px; text-align: center; z-index: 1; }
+  @media (max-width: 760px) {
+    .flow { grid-template-columns: 1fr; }
+    .flow-step { border-right: 0; border-bottom: 1px solid var(--line); }
+    .flow-step:last-child { border-bottom: 0; }
+    .flow-step:not(:last-child)::after { content: "↓"; right: auto; left: 18px; top: auto; bottom: -13px; }
+  }
+
+  /* Menu map */
+  .menu-map { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+  .menu-item { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+  .menu-item b { font-family: var(--font-display); font-size: 15px; }
+  .menu-item span { font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; }
+  .menu-item.dont { border-style: dashed; }
+  .menu-item.dont b { color: var(--muted); }
+
+  /* Test checklist */
+  .test { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 22px; }
+  .test-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+  .progress { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .bar { width: 160px; max-width: 40vw; height: 6px; border-radius: 3px; background: var(--chip); overflow: hidden; }
+  .bar > div { height: 100%; width: 0; background: var(--ok); transition: width .25s; }
+  @media (prefers-reduced-motion: reduce) { .bar > div { transition: none; } }
+  .reset { font: inherit; font-size: 14px; background: none; border: 1px solid var(--line); color: var(--ink-soft); border-radius: 6px; padding: 4px 12px; cursor: pointer; }
+  .reset:hover { border-color: var(--ink-soft); color: var(--ink); }
+  .phase { display: grid; gap: 10px; }
+  .phase h3 { margin: 0; display: flex; gap: 10px; align-items: baseline; }
+  .phase h3 small { font-family: var(--font-mono); font-size: 12px; color: var(--accent); font-weight: 500; }
+  .check { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; padding: 10px 12px; border-radius: 8px; cursor: pointer; align-items: start; }
+  .check:hover { background: var(--bg); }
+  .check input { width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--ok); cursor: pointer; }
+  .check .t { display: grid; gap: 2px; }
+  .check .t b { font-weight: 600; }
+  .check .t span { color: var(--ink-soft); font-size: 15.5px; }
+  .check input:checked + .t b { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+  .expect { display: inline; font-size: 14.5px; color: var(--ok); font-weight: 600; }
+
+  details.faq { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0 18px; }
+  details.faq + details.faq { margin-top: -8px; }
+  details.faq summary { cursor: pointer; padding: 14px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent); }
+  details.faq[open] summary::after { content: "–"; }
+  details.faq > div { padding: 0 0 16px; display: grid; gap: 10px; }
+  details.faq > div > * { margin: 0; }
+
+  footer.doc-foot { border-top: 1px solid var(--line); padding-top: 20px; font-size: 14px; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 32px; padding-block: 28px 60px; }
+    nav.toc { position: static; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+    .toc ol { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .hero { padding: 40px 16px 36px; }
+    .layout { padding-inline: 16px; }
+    .test { padding: 18px 14px; }
+    td:first-child { white-space: normal; }
+  }
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Instrukcja obsługi panelu</div>
+    <h1>Panel SD ProTech</h1>
+    <p>Jak edytować stronę, dodawać szkolenia online, obsługiwać zamówienia i klientów. Na końcu: lista kontrolna do przetestowania zakupu szkolenia od koszyka do certyfikatu.</p>
+    <div class="hero-meta">
+      <span>Panel: <strong>twojadomena.pl/wp-admin</strong></span>
+      <span>Stan na: <strong>wrzesień 2026</strong></span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Spis treści">
+    <p class="toc-title">Spis treści</p>
+    <ol>
+      <li><a href="#start">Logowanie i menu</a></li>
+      <li><a href="#ustawienia">Ustawienia motywu</a></li>
+      <li><a href="#strony">Strony i bloki</a></li>
+      <li><a href="#wpisy">Wpisy i media</a></li>
+      <li><a href="#jak-dziala">Jak działa sprzedaż szkoleń</a></li>
+      <li><a href="#kursy">Kursy (Masteriyo)</a></li>
+      <li><a href="#produkty">Produkty (WooCommerce)</a></li>
+      <li><a href="#zamowienia">Zamówienia i statusy</a></li>
+      <li><a href="#klienci">Klienci i konta</a></li>
+      <li><a href="#platnosci">Płatności i e-maile</a></li>
+      <li><a href="#inne">Pozostałe narzędzia</a></li>
+      <li><a href="#test" class="is-test">Test ścieżki zakupowej</a></li>
+      <li><a href="#problemy">Gdy coś nie działa</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- 1 -->
+    <section id="start">
+      <h2><span class="num">01</span>Logowanie i menu</h2>
+      <p class="lead">Panel administracyjny otwierasz, dopisując <code class="path">/wp-admin</code> do adresu strony. Logujesz się swoim loginem lub adresem e-mail i hasłem.</p>
+      <p>Po lewej stronie jest menu panelu. Na co dzień korzystasz z kilku pozycji:</p>
+      <div class="menu-map">
+        <div class="menu-item"><b>Strony</b><span>Treść podstron: Strona główna, O nas, Oferta, Kontakt, Szkolenia online, regulaminy.</span></div>
+        <div class="menu-item"><b>Wpisy</b><span>Aktualności i artykuły na blogu.</span></div>
+        <div class="menu-item"><b>Media</b><span>Wszystkie zdjęcia i pliki wgrane na stronę.</span></div>
+        <div class="menu-item"><b>WooCommerce</b><span>Zamówienia, klienci, ustawienia sklepu, płatności i e-maili.</span></div>
+        <div class="menu-item"><b>Produkty</b><span>To, co klient kupuje: szkolenia online (i ewentualne inne produkty).</span></div>
+        <div class="menu-item"><b>Masteriyo</b><span>Kursy: lekcje, testy, certyfikaty, postęp kursantów.</span></div>
+        <div class="menu-item"><b>Ustawienia motywu</b><span>Logo, telefon, e-mail, adres, dane firmy, włącznik sklepu.</span></div>
+        <div class="menu-item"><b>Kontakt</b><span>Formularze kontaktowe (Contact Form 7).</span></div>
+        <div class="menu-item"><b>Wygląd › Menu</b><span>Pozycje w menu nagłówka i stopki.</span></div>
+        <div class="menu-item"><b>Użytkownicy</b><span>Konta klientów i administratorów.</span></div>
+        <div class="menu-item dont"><b>Wtyczki, Narzędzia, Ustawienia</b><span>Konfiguracja techniczna. Zmieniaj tylko w porozumieniu z osobą, która prowadzi stronę.</span></div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="ustawienia">
+      <h2><span class="num">02</span>Ustawienia motywu</h2>
+      <p class="lead">Dane, które powtarzają się na wielu podstronach, są wpisane w jednym miejscu. Zmieniasz je raz i zmiana pojawia się w nagłówku, stopce i blokach kontaktowych.</p>
+      <p>Wejdź w <span class="path">Ustawienia motywu</span>. Na górze są zakładki:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Zakładka</th><th>Co zawiera</th></tr></thead>
+          <tbody>
+            <tr><td>Logo</td><td>Logo na jasnym tle i logo na ciemnym tle. Nagłówek i stopka są ciemne, więc używają wersji na ciemne tło. Wgraj plik PNG lub SVG z przezroczystym tłem.</td></tr>
+            <tr><td>Kontakt</td><td>Telefon, e-mail, numer WhatsApp (puste = ten sam co telefon), adres, dane rejestrowe (nazwa, NIP, REGON do stopki).</td></tr>
+            <tr><td>Osoba kontaktowa</td><td>Zdjęcie, imię i nazwisko, stanowisko. Pokazywane w sekcji „O nas” i przy danych kontaktowych.</td></tr>
+            <tr><td>Hasła</td><td>Krótkie i rozwinięte hasło firmy.</td></tr>
+            <tr><td>Sklep</td><td>Włącznik <strong>„Sklep i płatności”</strong>. Po wyłączeniu z nagłówka znika koszyk i „Moje konto”, ze strony głównej znikają sekcje sprzedażowe, a wejście na sklep, koszyk, zamówienie lub „Szkolenia online” przekierowuje na stronę główną.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Pozostałe zakładki (Kod własny, Śledzenie, Social i meta, Banery) służą do kodów Google Analytics / Tag Managera, linków do social mediów i globalnego paska z komunikatem.</p>
+      <div class="note warn">
+        <span class="note-label">Uwaga</span>
+        <p>Pola „Kod w &lt;head&gt;” i „Dodatkowe skrypty” wstawiają kod na każdą podstronę. Błędny kod może zepsuć wygląd całej strony. Wklejaj tam tylko to, co dostaniesz od osoby od marketingu lub od twórcy strony.</p>
+      </div>
+      <p>Po każdej zmianie kliknij <strong>Aktualizuj</strong> na dole lub po prawej stronie.</p>
+    </section>
+
+    <!-- 3 -->
+    <section id="strony">
+      <h2><span class="num">03</span>Strony i bloki</h2>
+      <p class="lead">Każda podstrona jest zbudowana z bloków, czyli gotowych sekcji. Zmieniasz ich treść w polach formularza, a wygląd pilnuje motyw.</p>
+      <h3>Edycja istniejącej strony</h3>
+      <ol class="steps">
+        <li><span>Wejdź w <span class="path">Strony</span> i najedź na tytuł strony, np. „Strona główna”. Kliknij <strong>Edytuj</strong>.</span></li>
+        <li><span>Kliknij w sekcję, którą chcesz zmienić. Po prawej otworzy się panel z jej polami (nagłówek, tekst, zdjęcie, przycisk).</span></li>
+        <li><span>Część bloków pokazuje podgląd. Aby przejść do edycji pól, kliknij ikonę ołówka na pasku nad blokiem.</span></li>
+        <li><span>Kliknij <strong>Zaktualizuj</strong> w prawym górnym rogu. Zmiany są od razu widoczne na stronie.</span></li>
+      </ol>
+      <h3>Dostępne bloki</h3>
+      <p>Nowy blok dodajesz przyciskiem <strong>+</strong> w edytorze. Bloki strony są w kategorii „WCO Blocks”.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Blok</th><th>Do czego służy</th></tr></thead>
+          <tbody>
+            <tr><td>Hero główny</td><td>Pierwszy ekran strony głównej: filary oferty i szybki kontakt.</td></tr>
+            <tr><td>Hero Banner</td><td>Duży nagłówek z tekstem i przyciskiem na początku podstrony.</td></tr>
+            <tr><td>O nas</td><td>Sekcja ze zdjęciem osoby prowadzącej firmę.</td></tr>
+            <tr><td>Services</td><td>Kafelki usług z ikoną, tytułem, opisem i linkiem.</td></tr>
+            <tr><td>Liczby</td><td>Wyróżnione liczby: lata doświadczenia, liczba szkoleń itp.</td></tr>
+            <tr><td>Jak pracujemy</td><td>Ponumerowane kroki współpracy.</td></tr>
+            <tr><td>Text image</td><td>Tekst obok zdjęcia (zdjęcie z lewej lub prawej).</td></tr>
+            <tr><td>Szkolenia online</td><td>Sekcja sprzedażowa: wybrane szkolenia z cenami z WooCommerce i listą „Co zawiera szkolenie”.</td></tr>
+            <tr><td>Lista szkoleń</td><td>Siatka wszystkich szkoleń z cenami i przyciskiem zakupu.</td></tr>
+            <tr><td>Testimonials Slider</td><td>Opinie klientów w przewijanym pasku.</td></tr>
+            <tr><td>FAQ Accordion</td><td>Pytania i odpowiedzi, rozwijane po kliknięciu.</td></tr>
+            <tr><td>Latest Posts</td><td>Najnowsze wpisy z bloga.</td></tr>
+            <tr><td>Wezwanie do kontaktu</td><td>Wąski pasek z zachętą do kontaktu i numerem telefonu.</td></tr>
+            <tr><td>Kontakt</td><td>Dane kontaktowe, formularz i opcjonalna mapa.</td></tr>
+            <tr><td>Spacer</td><td>Odstęp między sekcjami (osobno na telefonie i komputerze).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Każdy blok ma na dole pola <strong>Section settings</strong> (kolor tła, identyfikator do linków typu <code class="path">#kontakt</code>) i <strong>Spacing settings</strong> (odstępy nad i pod sekcją). Zwykle nie trzeba ich zmieniać.</p>
+      <div class="note stop">
+        <span class="note-label">Nie usuwaj</span>
+        <p>Strony <strong>Sklep, Koszyk, Zamówienie, Moje konto, Nauka, Konto LMS (techniczne)</strong> i <strong>Zamówienie LMS (techniczne)</strong> są potrzebne do działania sklepu i kursów. Nie usuwaj ich i nie zmieniaj ich adresów.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="wpisy">
+      <h2><span class="num">04</span>Wpisy i media</h2>
+      <ol class="steps">
+        <li><span>Nowy artykuł: <span class="path">Wpisy <i>›</i> Dodaj nowy</span>. Wpisz tytuł i treść.</span></li>
+        <li><span>Po prawej ustaw <strong>Obrazek wyróżniający</strong>. Pokazuje się on na liście wpisów i w bloku „Latest Posts”.</span></li>
+        <li><span>Kliknij <strong>Opublikuj</strong>. Możesz też zaplanować publikację na konkretny dzień (kliknij datę obok „Opublikuj”).</span></li>
+      </ol>
+      <p>Zdjęcia przed wgraniem warto zmniejszyć do ok. 2000 px szerokości. Duże pliki z aparatu spowalniają stronę. Wszystkie pliki znajdziesz w <span class="path">Media <i>›</i> Biblioteka</span>.</p>
+    </section>
+
+    <!-- 5 -->
+    <section id="jak-dziala">
+      <h2><span class="num">05</span>Jak działa sprzedaż szkoleń</h2>
+      <p class="lead">Szkolenie online składa się z dwóch połączonych elementów: <strong>kursu</strong> w Masteriyo (treść: lekcje, test, certyfikat) i <strong>produktu</strong> w WooCommerce (cena, zdjęcie, koszyk). Klient kupuje produkt, a dostęp dostaje do kursu.</p>
+      <div class="flow" role="list">
+        <div class="flow-step" role="listitem"><span class="where">Masteriyo</span><strong>Kurs</strong><span>Lekcje, test końcowy, certyfikat.</span></div>
+        <div class="flow-step" role="listitem"><span class="where">WooCommerce</span><strong>Produkt</strong><span>Cena i opis. Powiązany z kursem.</span></div>
+        <div class="flow-step" role="listitem"><span class="where">Przelewy24</span><strong>Zamówienie opłacone</strong><span>Status zmienia się automatycznie na „Zrealizowane”.</span></div>
+        <div class="flow-step" role="listitem"><span class="where">Moje konto</span><strong>Dostęp do kursu</strong><span>Kurs pojawia się w zakładce „Moje kursy”.</span></div>
+      </div>
+      <p>Dostęp do kursu jest aktywny tylko wtedy, gdy zamówienie ma status <span class="status s-ok">Zrealizowane</span>. Strona robi to sama: gdy opłacone zamówienie zawiera wyłącznie szkolenia, od razu zmienia jego status na „Zrealizowane”, a w notatkach zamówienia pojawia się wpis o automatycznej realizacji.</p>
+      <div class="note">
+        <span class="note-label">Dobrze wiedzieć</span>
+        <p>Jeśli w jednym zamówieniu jest szkolenie i zwykły produkt (np. upominek do wysłania), zamówienie zostaje „W trakcie realizacji”. Dostęp do kursu pojawi się dopiero wtedy, gdy ręcznie zmienisz status na „Zrealizowane” (np. po wysłaniu paczki).</p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="kursy">
+      <h2><span class="num">06</span>Kursy (Masteriyo)</h2>
+      <p class="lead">Kursy tworzysz i edytujesz w <span class="path">Masteriyo <i>›</i> Kursy</span>. Edytor kursu otwiera się jako osobna aplikacja w panelu.</p>
+      <h3>Nowy kurs</h3>
+      <ol class="steps">
+        <li><span><span class="path">Masteriyo <i>›</i> Kursy <i>›</i> Dodaj nowy</span>. Wpisz nazwę, opis i dodaj obrazek.</span></li>
+        <li><span>W części z programem kursu (Builder / Program) dodaj <strong>sekcję</strong> (moduł), a w niej <strong>lekcje</strong>. Lekcja może zawierać tekst, film lub pliki.</span></li>
+        <li><span>Na końcu dodaj <strong>quiz</strong>, czyli test końcowy. Ustaw pytania, poprawne odpowiedzi i próg zaliczenia.</span></li>
+        <li><span>W ustawieniach kursu przypisz <strong>certyfikat</strong> („Certyfikat ukończenia szkolenia — SD ProTech”). Kursant pobierze go po ukończeniu kursu.</span></li>
+        <li><span>Opublikuj kurs. Jest on teraz gotowy, ale jeszcze nie ma go w sprzedaży. Do tego potrzebny jest produkt (następny rozdział).</span></li>
+      </ol>
+      <h3>Postęp kursantów</h3>
+      <p>Kto jest zapisany na kurs i jak mu idzie, sprawdzisz w Masteriyo w sekcji studentów/zapisów oraz w podglądzie kursu. Kursant widzi swój postęp w zakładce <strong>Moje kursy</strong> na swoim koncie. Gdy ukończy kurs, pojawia się tam przycisk do pobrania certyfikatu.</p>
+      <div class="note">
+        <span class="note-label">Wzór certyfikatu</span>
+        <p>Wygląd certyfikatu edytujesz w Masteriyo w sekcji certyfikatów. Imię i nazwisko, nazwa kursu i data wstawiają się automatycznie, więc w szablonie nie wpisuj ich ręcznie.</p>
+      </div>
+      <div class="note warn">
+        <span class="note-label">Zamówienia są w WooCommerce</span>
+        <p>Masteriyo ma własną zakładkę „Zamówienia”, ale sklep jej nie używa. Wszystkie zamówienia i płatności znajdziesz w <span class="path">WooCommerce <i>›</i> Zamówienia</span>.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="produkty">
+      <h2><span class="num">07</span>Produkty (WooCommerce)</h2>
+      <p class="lead">Produkt to „wizytówka sprzedażowa” kursu: nazwa, cena, zdjęcie i krótki opis w kafelku na stronie.</p>
+      <h3>Wystawienie szkolenia na sprzedaż</h3>
+      <ol class="steps">
+        <li><span><span class="path">Produkty <i>›</i> Dodaj nowy</span>. Wpisz nazwę, np. „Szkolenie okresowe BHP (Online) — pracownicy administracyjno-biurowi”.</span></li>
+        <li><span>W polu <strong>Dane produktu</strong> wybierz typ <strong>Kurs</strong> (Course).</span></li>
+        <li><span>Na karcie <strong>Ogólne</strong> wpisz cenę regularną. Cena promocyjna jest opcjonalna (możesz podać daty jej obowiązywania).</span></li>
+        <li><span>Na karcie <strong>Kurs</strong> wybierz z listy kurs Masteriyo, do którego produkt ma dawać dostęp. <strong>To najważniejszy krok.</strong> Bez niego klient zapłaci, ale nie dostanie kursu.</span></li>
+        <li><span>Uzupełnij <strong>Krótki opis</strong> (pokazuje się w kafelkach szkoleń na stronie) i <strong>Zdjęcie produktu</strong> po prawej.</span></li>
+        <li><span>Kliknij <strong>Opublikuj</strong>.</span></li>
+      </ol>
+      <p>Najnowsze szkolenia pojawią się same w blokach <strong>Lista szkoleń</strong> i <strong>Szkolenia online</strong>. W bloku „Szkolenia online” możesz też ręcznie wybrać, które szkolenia i w jakiej kolejności pokazać (pole „Szkolenia do pokazania”).</p>
+      <h3>Zmiana ceny, wycofanie ze sprzedaży</h3>
+      <ul>
+        <li>Cenę zmieniasz w edycji produktu, na karcie „Ogólne”. Zmiana obowiązuje od razu i nie wpływa na złożone już zamówienia.</li>
+        <li>Aby wycofać szkolenie, zmień status produktu na <strong>Szkic</strong> (po prawej: Status › Edytuj). Osoby, które już kupiły kurs, nie tracą dostępu.</li>
+        <li>Nie usuwaj produktów, które ktoś już kupił. Zamówienia straciłyby odnośnik do produktu.</li>
+      </ul>
+      <h3>Kupony rabatowe</h3>
+      <p><span class="path">Marketing <i>›</i> Kupony <i>›</i> Dodaj kupon</span>. Ustawiasz kod, rodzaj rabatu (procent lub kwota), datę ważności i limit użyć. Klient wpisuje kod w podsumowaniu zamówienia („Dodaj kupony”).</p>
+    </section>
+
+    <!-- 8 -->
+    <section id="zamowienia">
+      <h2><span class="num">08</span>Zamówienia i statusy</h2>
+      <p class="lead">Wszystkie zamówienia są w <span class="path">WooCommerce <i>›</i> Zamówienia</span>. Liczba przy tej pozycji menu to zamówienia czekające na Twoją reakcję.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Status</th><th>Co oznacza</th><th>Dostęp do kursu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="status s-neutral">Oczekujące na płatność</span></td><td>Klient złożył zamówienie, ale nie dokończył płatności. Po pewnym czasie WooCommerce sam je anuluje.</td><td>Nie</td></tr>
+            <tr><td><span class="status s-wait">W trakcie realizacji</span></td><td>Opłacone, czeka na realizację. Przy samych szkoleniach nie powinno tu zostawać (zob. rozdział 13).</td><td>Nie</td></tr>
+            <tr><td><span class="status s-wait">Wstrzymane</span></td><td>Czeka na potwierdzenie wpłaty, np. przy zwykłym przelewie.</td><td>Nie</td></tr>
+            <tr><td><span class="status s-ok">Zrealizowane</span></td><td>Opłacone i zamknięte. Klient dostaje e-mail o dostępie do kursu.</td><td><strong>Tak</strong></td></tr>
+            <tr><td><span class="status s-off">Anulowane</span></td><td>Anulowane przez klienta, sklep lub automatycznie.</td><td>Odebrany</td></tr>
+            <tr><td><span class="status s-off">Zwrócone</span></td><td>Pieniądze oddane klientowi.</td><td>Odebrany</td></tr>
+            <tr><td><span class="status s-off">Nieudane</span></td><td>Płatność odrzucona lub przerwana.</td><td>Odebrany</td></tr>
+            <tr><td><span class="status s-neutral">Szkic</span></td><td>Koszyk porzucony na etapie zamówienia. Nie wymaga działania.</td><td>Nie</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Ręczne nadanie dostępu</h3>
+      <p>Jeśli klient zapłacił, a kurs się nie pojawił, np. przy płatności przelewem:</p>
+      <ol class="steps">
+        <li><span>Otwórz zamówienie. Sprawdź, czy w polu <strong>Klient</strong> jest konto klienta, a nie „Gość”. Jeśli jest „Gość”, wybierz z listy konto z tym samym adresem e-mail.</span></li>
+        <li><span>Zmień <strong>Status</strong> na „Zrealizowane” i kliknij <strong>Aktualizuj</strong>.</span></li>
+        <li><span>Kurs pojawi się od razu w „Moich kursach” klienta, a klient dostanie e-mail.</span></li>
+      </ol>
+      <h3>Zwrot pieniędzy</h3>
+      <p>W zamówieniu kliknij <strong>Zwrot</strong> pod listą produktów, wpisz kwotę i potwierdź. Jeśli bramka płatności obsługuje zwroty automatyczne, pojawi się przycisk „Zwróć … przez Przelewy24”. W przeciwnym razie zwróć pieniądze w panelu Przelewy24 i w WooCommerce użyj opcji zwrotu ręcznego. Po zmianie statusu na „Zwrócone” dostęp do kursu zostaje automatycznie odebrany.</p>
+      <h3>Faktury i notatki</h3>
+      <p>Po prawej stronie zamówienia są <strong>notatki</strong>. Widać tam historię płatności i zmian statusu. Notatkę możesz dodać jako prywatną (tylko dla Ciebie) lub jako notatkę dla klienta (klient dostaje ją e-mailem).</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="klienci">
+      <h2><span class="num">09</span>Klienci i konta</h2>
+      <p class="lead">Do kupienia szkolenia potrzebne jest konto, bo kurs jest przypisany do konta. Klient nie musi go zakładać wcześniej: konto powstaje automatycznie podczas składania zamówienia.</p>
+      <ol class="steps">
+        <li><span>Klient podaje e-mail i dane w formularzu zamówienia i płaci.</span></li>
+        <li><span>WooCommerce zakłada konto na ten e-mail i wysyła wiadomość <strong>„Nowe konto”</strong> z linkiem do ustawienia hasła.</span></li>
+        <li><span>Klient ustawia hasło, loguje się w <strong>Moje konto</strong> i w zakładce <strong>Moje kursy</strong> widzi szkolenie z przyciskiem „Rozpocznij” lub „Kontynuuj”.</span></li>
+      </ol>
+      <p>Jeśli klient zgubi maila lub zapomni hasła, na stronie „Moje konto” klika <strong>Nie pamiętasz hasła?</strong> i podaje swój e-mail.</p>
+      <h3>Zakładki konta klienta</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Zakładka</th><th>Co widzi klient</th></tr></thead>
+          <tbody>
+            <tr><td>Kokpit</td><td>Powitanie i skróty.</td></tr>
+            <tr><td>Moje kursy</td><td>Kupione szkolenia, postęp, przycisk przejścia do nauki, certyfikat po ukończeniu.</td></tr>
+            <tr><td>Zamówienia</td><td>Historia zakupów i ich statusy.</td></tr>
+            <tr><td>Adresy</td><td>Dane rozliczeniowe.</td></tr>
+            <tr><td>Szczegóły konta</td><td>Imię, nazwisko, e-mail, zmiana hasła.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Wszystkie konta znajdziesz w <span class="path">Użytkownicy</span> lub w <span class="path">WooCommerce <i>›</i> Klienci</span>. Nie zmieniaj klientom roli z „Klient” / „Student” na wyższą.</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="platnosci">
+      <h2><span class="num">10</span>Płatności i e-maile</h2>
+      <h3>Przelewy24</h3>
+      <p>Ustawienia bramki: <span class="path">WooCommerce <i>›</i> Ustawienia <i>›</i> Płatności <i>›</i> Przelewy24</span>. Są tam dane sprzedawcy z panelu Przelewy24 i przełącznik trybu testowego. Tryb testowy przydaje się do sprawdzenia zakupu bez prawdziwych pieniędzy (zob. rozdział 12). Po teście koniecznie go wyłącz.</p>
+      <p>Wypłaty, zwroty i raporty transakcji obsługujesz w panelu Przelewy24 (panel.przelewy24.pl), nie w WordPressie.</p>
+      <h3>Konta i zakupy</h3>
+      <p><span class="path">WooCommerce <i>›</i> Ustawienia <i>›</i> Konta i prywatność</span>. Zalecane ustawienia:</p>
+      <ul>
+        <li>☐ Płatność przez gościa: <strong>wyłączone</strong>.</li>
+        <li>☑ Logowanie podczas realizacji zakupu: <strong>włączone</strong>. Stały klient może się zalogować w formularzu zamówienia.</li>
+        <li>☑ Tworzenie konta podczas realizacji transakcji: <strong>włączone</strong>.</li>
+        <li>☑ Wysyłanie odnośnika do konfiguracji hasła: <strong>włączone</strong>.</li>
+      </ul>
+      <h3>E-maile do klientów</h3>
+      <p><span class="path">WooCommerce <i>›</i> Ustawienia <i>›</i> E-maile</span>. Przy szkoleniach najważniejsze są: <strong>Nowe konto</strong> (link do hasła), <strong>Zrealizowane zamówienie</strong> i <strong>Nowe zamówienie</strong> (powiadomienie dla Ciebie). Każdy e-mail można włączyć, wyłączyć i zmienić mu temat oraz nagłówek.</p>
+      <div class="note warn">
+        <span class="note-label">E-maile muszą dochodzić</span>
+        <p>Bez maila „Nowe konto” klient nie ustawi hasła i nie wejdzie do kursu. Po uruchomieniu sprzedaży sprawdź, czy maile dochodzą i nie trafiają do spamu. Jeśli trafiają, poproś twórcę strony o podpięcie wysyłki przez SMTP (skrzynka w Twojej domenie).</p>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section id="inne">
+      <h2><span class="num">11</span>Pozostałe narzędzia</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Narzędzie</th><th>Kiedy go używać</th></tr></thead>
+          <tbody>
+            <tr><td>Kontakt</td><td>Edycja formularza kontaktowego i adresu, na który przychodzą wiadomości (zakładka „Mail” w formularzu).</td></tr>
+            <tr><td>Yoast SEO</td><td>Pod treścią każdej strony i wpisu jest panel Yoast: tytuł i opis widoczne w Google. Warto je uzupełnić przy nowych stronach i szkoleniach.</td></tr>
+            <tr><td>LiteSpeed Cache</td><td>Przyspiesza stronę, zapamiętując jej gotową wersję. Jeśli po zmianie nie widzisz jej na stronie, wybierz <span class="path">LiteSpeed Cache <i>›</i> Wyczyść wszystko</span> (lub „Purge All” na górnym pasku).</td></tr>
+            <tr><td>Baner cookies / Compliance</td><td>Treść i wygląd komunikatu o plikach cookies.</td></tr>
+            <tr><td>Duplicator</td><td>Kopie zapasowe całej strony. Obsługuje je twórca strony. Nie usuwaj istniejących kopii.</td></tr>
+            <tr><td>Aktualizacje</td><td>Liczby przy „Wtyczki” i „Kokpit › Aktualizacje” to dostępne aktualizacje. Aktualizuj po zrobieniu kopii zapasowej lub zleć to twórcy strony, szczególnie WooCommerce i Masteriyo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section id="test">
+      <h2><span class="num">12</span>Test ścieżki zakupowej</h2>
+      <p class="lead">Przejdź przez tę listę po każdej większej zmianie: nowym szkoleniu, zmianie ustawień płatności, aktualizacji WooCommerce lub Masteriyo. Zajmuje ok. 15 minut.</p>
+      <div class="note">
+        <span class="note-label">Jak zapłacić w teście</span>
+        <p><strong>Wariant A (zalecany):</strong> włącz tryb testowy Przelewy24 i zapłać testową płatnością. Pieniądze nie są pobierane. <strong>Wariant B:</strong> kup szkolenie za prawdziwe pieniądze, a potem zrób zwrot. Przy okazji przetestujesz zwrot i odebranie dostępu. Kupon 100% nie wystarczy, bo pomija Przelewy24, a właśnie bramkę trzeba sprawdzić.</p>
+      </div>
+
+      <div class="test" id="checklist">
+        <div class="test-head">
+          <div class="progress"><div class="bar"><div id="bar-fill"></div></div><span id="count">0 / 0</span></div>
+          <button type="button" class="reset" id="reset">Wyczyść zaznaczenia</button>
+        </div>
+
+        <div class="phase">
+          <h3><small>A</small>Przygotowanie</h3>
+          <label class="check"><input type="checkbox" id="c-a1"><span class="t"><b>Włącz tryb testowy Przelewy24</b><span><span class="path">WooCommerce <i>›</i> Ustawienia <i>›</i> Płatności <i>›</i> Przelewy24</span>. Pomiń w wariancie B.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-a2"><span class="t"><b>Sprawdź, czy produkt jest powiązany z kursem</b><span>Edycja produktu › karta „Kurs”: wybrany właściwy kurs.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-a3"><span class="t"><b>Przygotuj e-mail testowy, którego nie ma jeszcze w sklepie</b><span>Np. adres z dopiskiem: <code class="path">twojadres+test1@gmail.com</code>. Gmail dostarczy go na Twoją skrzynkę, a sklep potraktuje jak nowego klienta.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-a4"><span class="t"><b>Otwórz okno prywatne (incognito)</b><span>Żeby kupować jako klient, a nie jako zalogowany administrator.</span></span></label>
+        </div>
+
+        <div class="phase">
+          <h3><small>B</small>Zakup jako nowy klient</h3>
+          <label class="check"><input type="checkbox" id="c-b1"><span class="t"><b>Wejdź na „Szkolenia online” i dodaj szkolenie do koszyka</b><span class="expect">Oczekiwane: licznik koszyka w nagłówku pokazuje 1.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-b2"><span class="t"><b>Przejdź do zamówienia i wypełnij dane</b><span>E-mail testowy, imię, nazwisko, adres. Sprawdź cenę w podsumowaniu.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-b3"><span class="t"><b>Zapłać przez Przelewy24</b><span class="expect">Oczekiwane: po płatności wracasz na stronę z podziękowaniem za zamówienie.</span></span></label>
+        </div>
+
+        <div class="phase">
+          <h3><small>C</small>Sprawdzenie w panelu</h3>
+          <label class="check"><input type="checkbox" id="c-c1"><span class="t"><b>Status zamówienia to „Zrealizowane”</b><span><span class="path">WooCommerce <i>›</i> Zamówienia</span>. W notatkach: wpis Przelewy24 o płatności i „Zamówienie zawiera wyłącznie kursy — zrealizowane automatycznie”.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-c2"><span class="t"><b>W polu „Klient” jest nowe konto, a nie „Gość”</b><span>W <span class="path">Użytkownicy</span> jest nowe konto z e-mailem testowym.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-c3"><span class="t"><b>Przyszedł mail „Nowe zamówienie” na adres sklepu</b><span>Sprawdź także folder spam.</span></span></label>
+        </div>
+
+        <div class="phase">
+          <h3><small>D</small>Sprawdzenie jako klient</h3>
+          <label class="check"><input type="checkbox" id="c-d1"><span class="t"><b>Na e-mail testowy przyszły dwa maile</b><span>„Nowe konto” (link do hasła) i „Zamówienie zrealizowane” / informacja o dostępie do kursu.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-d2"><span class="t"><b>Ustaw hasło z linku i zaloguj się</b><span class="expect">Oczekiwane: trafiasz do „Moje konto”.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-d3"><span class="t"><b>W zakładce „Moje kursy” jest kupione szkolenie</b><span>Kliknij „Rozpocznij”. Otwiera się pierwsza lekcja.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-d4"><span class="t"><b>Przejdź kurs do końca i zalicz test</b><span>Oznacz lekcje jako ukończone i rozwiąż test końcowy.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-d5"><span class="t"><b>Pobierz certyfikat</b><span class="expect">Oczekiwane: w „Moich kursach” jest przycisk certyfikatu, a PDF ma poprawne imię, nazwisko, nazwę kursu i datę.</span></span></label>
+        </div>
+
+        <div class="phase">
+          <h3><small>E</small>Zwrot i sprzątanie</h3>
+          <label class="check"><input type="checkbox" id="c-e1"><span class="t"><b>Zrób zwrot lub zmień status na „Anulowane”</b><span>Wariant B: prawdziwy zwrot. Wariant A: wystarczy zmiana statusu.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-e2"><span class="t"><b>Sprawdź, czy dostęp do kursu zniknął</b><span class="expect">Oczekiwane: po odświeżeniu „Moje kursy” klienta testowego jest puste.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-e3"><span class="t"><b>Wyłącz tryb testowy Przelewy24</b><span>Najważniejszy krok. W trybie testowym prawdziwi klienci nie mogą zapłacić.</span></span></label>
+          <label class="check"><input type="checkbox" id="c-e4"><span class="t"><b>Usuń konto testowe (opcjonalnie)</b><span><span class="path">Użytkownicy</span> › najedź na konto › Usuń. Zamówienie testowe możesz przenieść do kosza.</span></span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section id="problemy">
+      <h2><span class="num">13</span>Gdy coś nie działa</h2>
+
+      <details class="faq">
+        <summary>Klient zapłacił, a kursu nie ma w „Moich kursach”</summary>
+        <div>
+          <p>Otwórz zamówienie i sprawdź po kolei:</p>
+          <ul>
+            <li><strong>Status.</strong> Dostęp daje tylko „Zrealizowane”. Jeśli jest „W trakcie realizacji” albo „Wstrzymane”, a płatność jest potwierdzona, zmień status ręcznie.</li>
+            <li><strong>Pole „Klient”.</strong> Jeśli jest „Gość”, przypisz konto klienta, zapisz, a dopiero potem zmień status.</li>
+            <li><strong>Powiązanie produktu z kursem.</strong> W edycji produktu, na karcie „Kurs”, musi być wybrany kurs.</li>
+          </ul>
+          <p>Jeśli wszystkie nowe zamówienia zostają „W trakcie realizacji”, zgłoś to twórcy strony. Mogła się zmienić działanie bramki płatności lub wtyczki.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Klient nie dostał maila z hasłem</summary>
+        <div>
+          <p>Poproś o sprawdzenie spamu. Jeśli maila nie ma, klient może użyć „Nie pamiętasz hasła?” na stronie „Moje konto”. Jeśli i ten mail nie dochodzi, problem jest w wysyłce poczty ze strony. Zgłoś to twórcy strony.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Klient pisze, że „konto z tym adresem już istnieje”</summary>
+        <div>
+          <p>Klient kupował już wcześniej. Powinien się zalogować (link „Zaloguj się” w formularzu zamówienia) albo zresetować hasło. Upewnij się, że opcja „Włącz logowanie podczas realizacji zakupu” jest zaznaczona.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Zmieniłam/zmieniłem treść, ale na stronie jej nie widać</summary>
+        <div>
+          <p>Wyczyść pamięć podręczną: <span class="path">LiteSpeed Cache <i>›</i> Wyczyść wszystko</span>, a potem odśwież stronę w przeglądarce (Ctrl+F5 lub Cmd+Shift+R).</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>Chcę tymczasowo wstrzymać sprzedaż</summary>
+        <div>
+          <p>Wyłącz przełącznik w <span class="path">Ustawienia motywu <i>›</i> Sklep</span>. Koszyk, konto i sekcje sprzedażowe znikną ze strony. Klienci, którzy już kupili szkolenie, zachowują dostęp, ale na czas wyłączenia nie wejdą przez „Moje konto”, bo ta strona też jest wtedy ukryta.</p>
+        </div>
+      </details>
+
+      <footer class="doc-foot">
+        W razie wątpliwości przy zmianach technicznych (wtyczki, aktualizacje, ustawienia płatności) skontaktuj się z twórcą strony przed zmianą, nie po.
+      </footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    var KEY = 'sdpt-test-checklist';
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('#checklist input[type="checkbox"]'));
+    var fill = document.getElementById('bar-fill');
+    var count = document.getElementById('count');
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+
+    function update() {
+      var done = boxes.filter(function (b) { return b.checked; }).length;
+      count.textContent = done + ' / ' + boxes.length;
+      fill.style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + '%';
+    }
+    function save() {
+      var state = {};
+      boxes.forEach(function (b) { if (b.checked) state[b.id] = true; });
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    boxes.forEach(function (b) {
+      if (saved[b.id]) b.checked = true;
+      b.addEventListener('change', function () { save(); update(); });
+    });
+    document.getElementById('reset').addEventListener('click', function () {
+      boxes.forEach(function (b) { b.checked = false; });
+      save(); update();
+    });
+    update();
+  })();
+</script>

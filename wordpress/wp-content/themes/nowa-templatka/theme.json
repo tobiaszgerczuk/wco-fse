@@ -1,0 +1,183 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "name": "Primary",
+          "color": "#1a56db"
+        },
+        {
+          "slug": "secondary",
+          "name": "Secondary",
+          "color": "#0e9f6e"
+        },
+        {
+          "slug": "dark",
+          "name": "Dark",
+          "color": "#111827"
+        },
+        {
+          "slug": "gray",
+          "name": "Gray",
+          "color": "#6b7280"
+        },
+        {
+          "slug": "light",
+          "name": "Light",
+          "color": "#f3f4f6"
+        },
+        {
+          "slug": "white",
+          "name": "White",
+          "color": "#ffffff"
+        }
+      ],
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false
+    },
+    "typography": {
+      "fluid": false,
+      "defaultFontSizes": false,
+      "fontFamilies": [
+        {
+          "slug": "body",
+          "name": "Body",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        },
+        {
+          "slug": "heading",
+          "name": "Heading",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "name": "Small",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "base",
+          "name": "Base",
+          "size": "1rem"
+        },
+        {
+          "slug": "medium",
+          "name": "Medium",
+          "size": "1.25rem"
+        },
+        {
+          "slug": "large",
+          "name": "Large",
+          "size": "clamp(1.5rem, 1.25rem + 1vw, 2rem)"
+        },
+        {
+          "slug": "x-large",
+          "name": "Extra large",
+          "size": "clamp(2rem, 1.5rem + 2vw, 3rem)"
+        },
+        {
+          "slug": "xx-large",
+          "name": "Huge",
+          "size": "clamp(2.5rem, 1.75rem + 3vw, 4.5rem)"
+        }
+      ]
+    },
+    "spacing": {
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        {
+          "slug": "xs",
+          "name": "XS",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "sm",
+          "name": "SM",
+          "size": "1rem"
+        },
+        {
+          "slug": "md",
+          "name": "MD",
+          "size": "2rem"
+        },
+        {
+          "slug": "lg",
+          "name": "LG",
+          "size": "clamp(2.5rem, 2rem + 2vw, 4rem)"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "clamp(4rem, 3rem + 4vw, 7rem)"
+        }
+      ],
+      "units": [
+        "px",
+        "rem",
+        "%",
+        "vw",
+        "vh"
+      ]
+    },
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1440px"
+    },
+    "custom": {
+      "breakpoints": {
+        "mobile": "600px",
+        "tablet": "1024px"
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--white)",
+      "text": "var(--wp--preset--color--dark)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--body)",
+      "fontSize": "var(--wp--preset--font-size--base)",
+      "lineHeight": "1.6"
+    },
+    "spacing": {
+      "padding": {
+        "left": "var(--wp--preset--spacing--sm)",
+        "right": "var(--wp--preset--spacing--sm)"
+      },
+      "blockGap": "var(--wp--preset--spacing--sm)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--primary)"
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "lineHeight": "1.2"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "nowa-templatka",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "theme-json": "node scripts/generate-theme-json.mjs",
+    "predev": "npm run theme-json",
+    "dev": "webpack --mode development --watch",
+    "prebuild": "npm run theme-json",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "css-loader": "^6.11.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss": "^8.4.35",
+    "postcss-loader": "^7.3.4",
+    "sass": "^1.77.0",
+    "sass-loader": "^16.0.8",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
