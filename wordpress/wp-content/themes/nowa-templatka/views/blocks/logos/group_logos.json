@@ -1,0 +1,126 @@
+{
+  "key": "group_logos",
+  "title": "Block: Logos",
+  "fields": [
+    {
+      "key": "field_logos_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_logos_columns",
+      "label": "Columns",
+      "name": "columns",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "3": "3 columns",
+        "4": "4 columns",
+        "5": "5 columns",
+        "6": "6 columns"
+      },
+      "default_value": "5",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_logos_grayscale",
+      "label": "Grayscale until hover",
+      "name": "grayscale",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_logos_items",
+      "label": "Logos",
+      "name": "items",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "button_label": "Add logo",
+      "sub_fields": [
+        {
+          "key": "field_logos_items_logo",
+          "label": "Logo",
+          "name": "logo",
+          "aria_label": "",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "return_format": "id",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_logos_items_link",
+          "label": "Link (optional)",
+          "name": "link",
+          "aria_label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "return_format": "array"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/logos"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

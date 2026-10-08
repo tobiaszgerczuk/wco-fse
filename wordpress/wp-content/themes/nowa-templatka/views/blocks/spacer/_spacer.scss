@@ -1,0 +1,5 @@
+.nt-spacer {
+  height: var(--nt-spacer-d, 4rem);
+
+  @media (max-width: 599px) { height: var(--nt-spacer-m, 2rem); }
+}

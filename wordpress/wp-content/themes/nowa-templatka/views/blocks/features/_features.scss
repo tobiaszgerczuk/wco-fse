@@ -1,0 +1,13 @@
+.nt-features {
+  &__grid--center .nt-feature { text-align: center; }
+  &__grid--center .nt-feature__icon { margin-inline: auto; }
+  &__grid--card .nt-feature { padding: var(--wp--preset--spacing--md); border-radius: 0.75rem; background: var(--wp--preset--color--light); color: var(--wp--preset--color--dark); }
+  &__grid--bordered .nt-feature { padding: var(--wp--preset--spacing--md); border: 1px solid rgba(128, 128, 128, 0.35); border-radius: 0.75rem; }
+}
+
+.nt-feature {
+  &__icon { width: 3.5rem; height: 3.5rem; margin-bottom: var(--wp--preset--spacing--sm); img { display: block; width: 100%; height: 100%; object-fit: contain; } }
+  &__title { margin: 0 0 var(--wp--preset--spacing--xs); font-size: var(--wp--preset--font-size--medium); }
+  &__text { margin: 0; opacity: 0.85; }
+  .nt-btn { margin-top: var(--wp--preset--spacing--xs); }
+}

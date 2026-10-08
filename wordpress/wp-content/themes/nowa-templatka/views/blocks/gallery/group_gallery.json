@@ -1,0 +1,140 @@
+{
+  "key": "group_gallery",
+  "title": "Block: Gallery",
+  "fields": [
+    {
+      "key": "field_gallery_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_gallery_images",
+      "label": "Images",
+      "name": "images",
+      "aria_label": "",
+      "type": "gallery",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "preview_size": "medium",
+      "insert": "append"
+    },
+    {
+      "key": "field_gallery_columns",
+      "label": "Columns",
+      "name": "columns",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "choices": {
+        "2": "2 columns",
+        "3": "3 columns",
+        "4": "4 columns",
+        "5": "5 columns"
+      },
+      "default_value": "3",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_gallery_gap",
+      "label": "Gap",
+      "name": "gap",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "choices": {
+        "sm": "Small",
+        "md": "Medium",
+        "lg": "Large"
+      },
+      "default_value": "md",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_gallery_ratio",
+      "label": "Image ratio",
+      "name": "ratio",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "choices": {
+        "auto": "Original",
+        "1-1": "1:1",
+        "4-3": "4:3",
+        "16-9": "16:9"
+      },
+      "default_value": "4-3",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_gallery_link_to_full",
+      "label": "Open full-size image on click",
+      "name": "link_to_full",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "ui": 1,
+      "default_value": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/gallery"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

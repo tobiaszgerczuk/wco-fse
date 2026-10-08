@@ -1,0 +1,153 @@
+{
+  "key": "group_faq",
+  "title": "Block: FAQ",
+  "fields": [
+    {
+      "key": "field_faq_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_faq_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_faq_intro",
+      "label": "Intro",
+      "name": "intro",
+      "aria_label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 3
+    },
+    {
+      "key": "field_faq_open_first",
+      "label": "Open the first question",
+      "name": "open_first",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "ui": 1,
+      "default_value": 0
+    },
+    {
+      "key": "field_faq_schema",
+      "label": "Output FAQ structured data (SEO)",
+      "name": "schema",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_faq_items",
+      "label": "Questions",
+      "name": "items",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "button_label": "Add question",
+      "sub_fields": [
+        {
+          "key": "field_faq_items_question",
+          "label": "Question",
+          "name": "question",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "key": "field_faq_items_answer",
+          "label": "Answer",
+          "name": "answer",
+          "aria_label": "",
+          "type": "wysiwyg",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "tabs": "all",
+          "toolbar": "basic",
+          "media_upload": 0
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/faq"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

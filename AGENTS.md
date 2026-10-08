@@ -26,7 +26,7 @@ Block (FSE) starter: `theme.json`, `templates/*.html`, `parts/*.html`, SCSS + We
 - `assets/scss/` — `main.scss` (front) and `editor.scss` (editor iframe), both built into `public/`. `public/` is webpack output — never edit it by hand.
 - `app/Core/` — `Theme` (setup), `Assets` (loads `public/main.css`, editor styles).
 - Templates and parts are plain block markup (no PHP runs in `.html` files).
-- Blocks live in `views/blocks/<slug>/` (`block.json`, `render.php`, `_<slug>.scss`, `<slug>.js`, `group_<slug>.json`). `app/Blocks/Registry.php` registers them and routes ACF Local JSON there. Block JS is lazy-loaded when `.wp-block-acf-<slug>` is in the DOM. Requires ACF Pro 6.2+ (not bundled).
+- Blocks live in `views/blocks/<slug>/` (`block.json`, `render.php`, `_<slug>.scss`, `<slug>.js`, `group_<slug>.json`). `app/Blocks/Registry.php` registers them and routes ACF Local JSON there. Block JS is lazy-loaded when `.wp-block-acf-<slug>` is in the DOM. Requires ACF Pro 6.2+ (not bundled). Shared options (background, width, space above/below) live in one ACF group, `views/blocks/section/group_section_settings.json`, whose location lists every block that uses it; markup helpers are in `app/Blocks/Render.php` (`wrapper()`, `container()`, `head()`, `buttons()`, `image()`) and shared styles in `assets/scss/base/_sections.scss`.
 - Do not add a `postinstall` script to `package.json`.
 
 ## Commands

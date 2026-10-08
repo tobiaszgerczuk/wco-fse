@@ -1,0 +1,27 @@
+@use '../../../assets/scss/base/mixins' as *;
+
+.nt-text-image {
+  &__inner {
+    display: grid;
+    gap: var(--wp--preset--spacing--lg);
+    align-items: center;
+
+    @include respond-up('tablet') { grid-template-columns: 1fr 1fr; }
+  }
+
+  &--align-start &__inner { align-items: start; }
+  &--align-end &__inner { align-items: end; }
+
+  &--size-third &__inner { @include respond-up('tablet') { grid-template-columns: 2fr 1fr; } }
+  &--size-two-thirds &__inner { @include respond-up('tablet') { grid-template-columns: 1fr 2fr; } }
+  &--size-third.nt-text-image--image-left &__inner { @include respond-up('tablet') { grid-template-columns: 1fr 2fr; } }
+  &--size-two-thirds.nt-text-image--image-left &__inner { @include respond-up('tablet') { grid-template-columns: 2fr 1fr; } }
+
+  &--image-left &__media { @include respond-up('tablet') { order: -1; } }
+  &--image-first-mobile &__media { @include tablet { order: -1; } }
+
+  &__media img { display: block; width: 100%; height: auto; border-radius: 0.75rem; }
+  &__media.nt-ratio img { height: 100%; }
+  .nt-buttons { margin-top: var(--wp--preset--spacing--sm); }
+  .nt-head { margin-bottom: var(--wp--preset--spacing--sm); }
+}

@@ -1,0 +1,42 @@
+@use '../../../assets/scss/base/mixins' as *;
+
+.nt-hero {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &--h-md { min-height: 32rem; }
+  &--h-lg { min-height: 44rem; }
+  &--h-screen { min-height: 100vh; }
+
+  &__inner {
+    display: grid;
+    gap: var(--wp--preset--spacing--lg);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @include respond-up('tablet') { grid-template-columns: 1fr 1fr; }
+  }
+
+  &--centered &__inner,
+  &--background &__inner { grid-template-columns: 1fr; text-align: center; }
+
+  &--centered &__content,
+  &--background &__content { max-width: 52rem; margin-inline: auto; }
+
+  &--split-right &__media { @include respond-up('tablet') { order: -1; } }
+
+  &__media img { display: block; width: 100%; height: auto; border-radius: 0.75rem; }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  &__overlay { position: absolute; inset: 0; background: #000; }
+
+  &--background { color: var(--wp--preset--color--white); .nt-eyebrow { color: inherit; } }
+}

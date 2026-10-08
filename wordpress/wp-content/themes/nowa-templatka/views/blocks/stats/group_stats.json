@@ -1,0 +1,150 @@
+{
+  "key": "group_stats",
+  "title": "Block: Stats",
+  "fields": [
+    {
+      "key": "field_stats_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_stats_intro",
+      "label": "Intro",
+      "name": "intro",
+      "aria_label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 3
+    },
+    {
+      "key": "field_stats_columns",
+      "label": "Columns",
+      "name": "columns",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "2": "2 columns",
+        "3": "3 columns",
+        "4": "4 columns"
+      },
+      "default_value": "4",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_stats_items",
+      "label": "Numbers",
+      "name": "items",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "button_label": "Add number",
+      "sub_fields": [
+        {
+          "key": "field_stats_items_prefix",
+          "label": "Prefix",
+          "name": "prefix",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_stats_items_number",
+          "label": "Number",
+          "name": "number",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_stats_items_suffix",
+          "label": "Suffix",
+          "name": "suffix",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_stats_items_label",
+          "label": "Label",
+          "name": "label",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/stats"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

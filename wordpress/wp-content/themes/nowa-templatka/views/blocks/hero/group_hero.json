@@ -1,0 +1,231 @@
+{
+  "key": "group_hero",
+  "title": "Block: Hero",
+  "fields": [
+    {
+      "key": "field_hero_layout",
+      "label": "Layout",
+      "name": "layout",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "split-left": "Text left, image right",
+        "split-right": "Image left, text right",
+        "centered": "Centered text",
+        "background": "Text over background image"
+      },
+      "default_value": "split-left",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_hero_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_hero_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_hero_level",
+      "label": "Heading level",
+      "name": "level",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "h1": "H1",
+        "h2": "H2",
+        "h3": "H3",
+        "h4": "H4"
+      },
+      "default_value": "h1",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_hero_min_height",
+      "label": "Minimum height",
+      "name": "min_height",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "auto": "Auto",
+        "md": "Medium",
+        "lg": "Large",
+        "screen": "Full screen"
+      },
+      "default_value": "auto",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_hero_text",
+      "label": "Text",
+      "name": "text",
+      "aria_label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 3
+    },
+    {
+      "key": "field_hero_buttons",
+      "label": "Buttons",
+      "name": "buttons",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "button_label": "Add button",
+      "sub_fields": [
+        {
+          "key": "field_hero_buttons_link",
+          "label": "Link",
+          "name": "link",
+          "aria_label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "return_format": "array"
+        },
+        {
+          "key": "field_hero_buttons_style",
+          "label": "Style",
+          "name": "style",
+          "aria_label": "",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "choices": {
+            "primary": "Primary",
+            "secondary": "Secondary",
+            "outline": "Outline",
+            "link": "Link"
+          },
+          "default_value": "primary",
+          "return_format": "value",
+          "allow_null": 0
+        }
+      ],
+      "max": 3
+    },
+    {
+      "key": "field_hero_image",
+      "label": "Image",
+      "name": "image",
+      "aria_label": "",
+      "type": "image",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_hero_overlay",
+      "label": "Overlay darkness (%) — background layout",
+      "name": "overlay",
+      "aria_label": "",
+      "type": "number",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 40,
+      "min": 0,
+      "max": 90
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/hero"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

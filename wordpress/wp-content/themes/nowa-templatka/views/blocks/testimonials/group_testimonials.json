@@ -1,0 +1,179 @@
+{
+  "key": "group_testimonials",
+  "title": "Block: Testimonials",
+  "fields": [
+    {
+      "key": "field_testimonials_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_testimonials_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_testimonials_columns",
+      "label": "Columns",
+      "name": "columns",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "1": "1 columns",
+        "2": "2 columns",
+        "3": "3 columns"
+      },
+      "default_value": "3",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_testimonials_items",
+      "label": "Testimonials",
+      "name": "items",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "button_label": "Add testimonial",
+      "sub_fields": [
+        {
+          "key": "field_testimonials_items_quote",
+          "label": "Quote",
+          "name": "quote",
+          "aria_label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 3
+        },
+        {
+          "key": "field_testimonials_items_name",
+          "label": "Name",
+          "name": "name",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_testimonials_items_role",
+          "label": "Role / company",
+          "name": "role",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_testimonials_items_photo",
+          "label": "Photo",
+          "name": "photo",
+          "aria_label": "",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "return_format": "id",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_testimonials_items_rating",
+          "label": "Rating",
+          "name": "rating",
+          "aria_label": "",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "choices": {
+            "0": "No rating",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5"
+          },
+          "default_value": "0",
+          "return_format": "value",
+          "allow_null": 0
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/testimonials"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

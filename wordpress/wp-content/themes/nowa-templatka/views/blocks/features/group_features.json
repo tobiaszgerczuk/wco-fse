@@ -1,0 +1,215 @@
+{
+  "key": "group_features",
+  "title": "Block: Features",
+  "fields": [
+    {
+      "key": "field_features_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_features_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_features_intro",
+      "label": "Intro",
+      "name": "intro",
+      "aria_label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 3
+    },
+    {
+      "key": "field_features_columns",
+      "label": "Columns",
+      "name": "columns",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "2": "2 columns",
+        "3": "3 columns",
+        "4": "4 columns"
+      },
+      "default_value": "3",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_features_card_style",
+      "label": "Item style",
+      "name": "card_style",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "plain": "Plain",
+        "card": "Card",
+        "bordered": "Bordered"
+      },
+      "default_value": "card",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_features_item_align",
+      "label": "Item alignment",
+      "name": "item_align",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "left": "Left",
+        "center": "Center"
+      },
+      "default_value": "left",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_features_items",
+      "label": "Items",
+      "name": "items",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "button_label": "Add item",
+      "sub_fields": [
+        {
+          "key": "field_features_items_icon",
+          "label": "Icon / image",
+          "name": "icon",
+          "aria_label": "",
+          "type": "image",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "25"
+          },
+          "return_format": "id",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_features_items_title",
+          "label": "Title",
+          "name": "title",
+          "aria_label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "75"
+          }
+        },
+        {
+          "key": "field_features_items_text",
+          "label": "Text",
+          "name": "text",
+          "aria_label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "rows": 3
+        },
+        {
+          "key": "field_features_items_link",
+          "label": "Link",
+          "name": "link",
+          "aria_label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/features"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

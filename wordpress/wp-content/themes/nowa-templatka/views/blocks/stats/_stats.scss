@@ -1,0 +1,7 @@
+.nt-stat {
+  text-align: center;
+
+  &__value { font-size: var(--wp--preset--font-size--xx-large); font-weight: 700; line-height: 1.1; color: var(--wp--preset--color--primary); }
+  &__label { margin-top: var(--wp--preset--spacing--xs); opacity: 0.8; }
+  .nt-bg-dark &__value, .nt-bg-primary &__value, .nt-bg-secondary &__value { color: inherit; }
+}

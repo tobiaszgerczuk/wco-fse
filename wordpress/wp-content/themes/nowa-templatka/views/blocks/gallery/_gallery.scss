@@ -1,0 +1,7 @@
+.nt-gallery {
+  &__grid { gap: var(--wp--preset--spacing--md); }
+  &__grid--gap-sm { gap: var(--wp--preset--spacing--xs); }
+  &__grid--gap-lg { gap: var(--wp--preset--spacing--lg); }
+  &__item { margin: 0; img { display: block; width: 100%; height: auto; border-radius: 0.5rem; } }
+  &__item.nt-ratio img { height: 100%; }
+}

@@ -1,0 +1,14 @@
+.nt-cta {
+  &--boxed .nt-cta__inner {
+    padding: var(--wp--preset--spacing--lg) var(--wp--preset--spacing--md);
+    border-radius: 1rem;
+    background: var(--wp--preset--color--light);
+    color: var(--wp--preset--color--dark);
+  }
+
+  &--boxed.nt-bg-dark .nt-cta__inner { background: rgba(255, 255, 255, 0.08); color: inherit; }
+  &--boxed.nt-bg-primary .nt-cta__inner,
+  &--boxed.nt-bg-secondary .nt-cta__inner { background: rgba(0, 0, 0, 0.15); color: inherit; }
+  .nt-head { max-width: 40rem; }
+  &--left .nt-head { margin-inline: 0; }
+}

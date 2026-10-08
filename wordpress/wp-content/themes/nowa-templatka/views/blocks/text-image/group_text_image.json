@@ -1,0 +1,270 @@
+{
+  "key": "group_text_image",
+  "title": "Block: Text and image",
+  "fields": [
+    {
+      "key": "field_text_image_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_text_image_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_text_image_level",
+      "label": "Heading level",
+      "name": "level",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "h1": "H1",
+        "h2": "H2",
+        "h3": "H3",
+        "h4": "H4"
+      },
+      "default_value": "h2",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_text_image_vertical_align",
+      "label": "Vertical alignment",
+      "name": "vertical_align",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "start": "Top",
+        "center": "Middle",
+        "end": "Bottom"
+      },
+      "default_value": "center",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_text_image_content",
+      "label": "Content",
+      "name": "content",
+      "aria_label": "",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0
+    },
+    {
+      "key": "field_text_image_buttons",
+      "label": "Buttons",
+      "name": "buttons",
+      "aria_label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "button_label": "Add button",
+      "sub_fields": [
+        {
+          "key": "field_text_image_buttons_link",
+          "label": "Link",
+          "name": "link",
+          "aria_label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "return_format": "array"
+        },
+        {
+          "key": "field_text_image_buttons_style",
+          "label": "Style",
+          "name": "style",
+          "aria_label": "",
+          "type": "select",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50"
+          },
+          "choices": {
+            "primary": "Primary",
+            "secondary": "Secondary",
+            "outline": "Outline",
+            "link": "Link"
+          },
+          "default_value": "primary",
+          "return_format": "value",
+          "allow_null": 0
+        }
+      ],
+      "max": 3
+    },
+    {
+      "key": "field_text_image_image",
+      "label": "Image",
+      "name": "image",
+      "aria_label": "",
+      "type": "image",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_text_image_image_position",
+      "label": "Image position",
+      "name": "image_position",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "choices": {
+        "right": "Right",
+        "left": "Left"
+      },
+      "default_value": "right",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_text_image_image_size",
+      "label": "Image width",
+      "name": "image_size",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "choices": {
+        "half": "Half",
+        "third": "One third",
+        "two-thirds": "Two thirds"
+      },
+      "default_value": "half",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_text_image_image_ratio",
+      "label": "Image ratio",
+      "name": "image_ratio",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "choices": {
+        "auto": "Original",
+        "1-1": "1:1",
+        "4-3": "4:3",
+        "16-9": "16:9"
+      },
+      "default_value": "auto",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_text_image_reverse_mobile",
+      "label": "Show image first on mobile",
+      "name": "reverse_mobile",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "ui": 1,
+      "default_value": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/text-image"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

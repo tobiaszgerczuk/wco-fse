@@ -1,0 +1,8 @@
+.nt-post-card {
+  &__image { display: block; margin-bottom: var(--wp--preset--spacing--sm); border-radius: 0.75rem; }
+  &__date { display: block; margin-bottom: 0.25rem; font-size: var(--wp--preset--font-size--small); opacity: 0.7; }
+  &__title { margin: 0 0 var(--wp--preset--spacing--xs); font-size: var(--wp--preset--font-size--medium); a { color: inherit; text-decoration: none; &:hover { text-decoration: underline; } } }
+  &__excerpt { margin: 0; opacity: 0.85; }
+}
+
+.nt-latest-posts .nt-buttons { margin-top: var(--wp--preset--spacing--md); }

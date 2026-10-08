@@ -1,0 +1,173 @@
+{
+  "key": "group_latest_posts",
+  "title": "Block: Latest posts",
+  "fields": [
+    {
+      "key": "field_latest_posts_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_latest_posts_title",
+      "label": "Title",
+      "name": "title",
+      "aria_label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_latest_posts_count",
+      "label": "Number of posts",
+      "name": "count",
+      "aria_label": "",
+      "type": "number",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "default_value": 3,
+      "min": 1,
+      "max": 12
+    },
+    {
+      "key": "field_latest_posts_columns",
+      "label": "Columns",
+      "name": "columns",
+      "aria_label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "choices": {
+        "2": "2 columns",
+        "3": "3 columns",
+        "4": "4 columns"
+      },
+      "default_value": "3",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_latest_posts_category",
+      "label": "Category (optional)",
+      "name": "category",
+      "aria_label": "",
+      "type": "taxonomy",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "taxonomy": "category",
+      "field_type": "select",
+      "return_format": "id",
+      "allow_null": 1,
+      "add_term": 0
+    },
+    {
+      "key": "field_latest_posts_show_image",
+      "label": "Show image",
+      "name": "show_image",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_latest_posts_show_date",
+      "label": "Show date",
+      "name": "show_date",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_latest_posts_show_excerpt",
+      "label": "Show excerpt",
+      "name": "show_excerpt",
+      "aria_label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33"
+      },
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_latest_posts_all_link",
+      "label": "Link to all posts",
+      "name": "all_link",
+      "aria_label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/latest-posts"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}

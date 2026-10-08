@@ -1,1 +1,15 @@
 // Block styles. Lines are added by npm run create-block.
+@use '../../views/blocks/section/section';
+@use '../../views/blocks/section-heading/section-heading';
+@use '../../views/blocks/spacer/spacer';
+@use '../../views/blocks/separator/separator';
+@use '../../views/blocks/hero/hero';
+@use '../../views/blocks/text-image/text-image';
+@use '../../views/blocks/cta/cta';
+@use '../../views/blocks/features/features';
+@use '../../views/blocks/faq/faq';
+@use '../../views/blocks/testimonials/testimonials';
+@use '../../views/blocks/stats/stats';
+@use '../../views/blocks/logos/logos';
+@use '../../views/blocks/gallery/gallery';
+@use '../../views/blocks/latest-posts/latest-posts';

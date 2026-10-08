@@ -1,0 +1,55 @@
+{
+  "key": "group_spacer",
+  "title": "Block: Spacer",
+  "fields": [
+    {
+      "key": "field_spacer_height_desktop",
+      "label": "Height on desktop (px)",
+      "name": "height_desktop",
+      "aria_label": "",
+      "type": "number",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "default_value": 64,
+      "min": 0
+    },
+    {
+      "key": "field_spacer_height_mobile",
+      "label": "Height on mobile (px)",
+      "name": "height_mobile",
+      "aria_label": "",
+      "type": "number",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50"
+      },
+      "default_value": 32,
+      "min": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/spacer"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1791464679
+}
