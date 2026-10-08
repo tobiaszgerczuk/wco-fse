@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "create-block": "node scripts/create-block.mjs",
     "theme-json": "node scripts/generate-theme-json.mjs",
     "predev": "npm run theme-json",
     "dev": "webpack --mode development --watch",

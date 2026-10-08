@@ -8,6 +8,7 @@ final class Theme {
 	public static function boot(): void {
 		add_action( 'after_setup_theme', array( self::class, 'setup' ) );
 		Assets::boot();
+		\NowaTemplatka\Blocks\Registry::boot();
 	}
 
 	public static function setup(): void {

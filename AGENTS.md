@@ -20,12 +20,13 @@
 
 ## Theme (`wordpress/wp-content/themes/<PROJECT_NAME>/`)
 
-Block (FSE) starter: `theme.json`, `templates/*.html`, `parts/*.html`, SCSS + Webpack, PSR-4 autoloader in `functions.php` (`app/` => namespace `NowaTemplatka\`, no Composer needed at runtime). Pages are edited visually in the Site Editor; custom blocks are ACF blocks with `InnerBlocks` (block generator planned).
+Block (FSE) starter: `theme.json`, `templates/*.html`, `parts/*.html`, SCSS + Webpack, PSR-4 autoloader in `functions.php` (`app/` => namespace `NowaTemplatka\`, no Composer needed at runtime). Pages are edited visually in the Site Editor; custom blocks are ACF blocks with `InnerBlocks` (generator: `npm run create-block -- <slug> "<Title>" [--inner]`).
 
 - `assets/tokens.json` — single source of design tokens (colours, fonts, font sizes, spacing, layout, breakpoints). `npm run theme-json` generates `theme.json` and `assets/scss/base/_tokens.scss` from it — never edit those two by hand.
 - `assets/scss/` — `main.scss` (front) and `editor.scss` (editor iframe), both built into `public/`. `public/` is webpack output — never edit it by hand.
 - `app/Core/` — `Theme` (setup), `Assets` (loads `public/main.css`, editor styles).
 - Templates and parts are plain block markup (no PHP runs in `.html` files).
+- Blocks live in `views/blocks/<slug>/` (`block.json`, `render.php`, `_<slug>.scss`, `<slug>.js`, `group_<slug>.json`). `app/Blocks/Registry.php` registers them and routes ACF Local JSON there. Block JS is lazy-loaded when `.wp-block-acf-<slug>` is in the DOM. Requires ACF Pro 6.2+ (not bundled).
 - Do not add a `postinstall` script to `package.json`.
 
 ## Commands
